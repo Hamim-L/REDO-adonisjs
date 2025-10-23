@@ -1,8 +1,9 @@
-@layout.app( {title: 'Redo - Services'} )
+@layout.app({ title: 'Redo - Services' })
 
   @slot('main')
+    @vite('resources/js/services.js')
+
     <main>
-      <!-- Section Services -->
       <!-- Hero Section -->
       <section class="services-hero">
         <div class="services-hero-overlay">
@@ -14,123 +15,35 @@
         </div>
       </section>
 
-      <!-- Gradient Divider -->
       <div class="gradient-divider">
       </div>
 
       <!-- Services List Section -->
       <section class="services-list">
+        <!-- 🔍 Search Bar -->
+        <div class="services-search-container">
+          <input type="text" id="serviceSearch" class="service-search-input" placeholder="Search our services..." />
+        </div>
+
         <div class="services-inner">
-          <div class="service-card">
-            <h2>
-              SOC as a Service
-            </h2>
-            <p>
-              Level up your cybersecurity with our AI-powered SOC Service. 24/7
-            monitoring, SIEM, compliance reporting, and expert response.
+          @each(service in services)
+            <div class="service-card" data-id="{{ service.id }}">
+              <h2>
+                {{ service.title }}
+              </h2>
+              <p>
+                {{ service.description }}
+              </p>
+              <a href="/contact" class="learn-more">Learn more →</a>
+              <button class="add-to-wishlist">Add to Wishlist</button>
+            </div>
+          @endeach
+          
+          @if(!services || services.length === 0)
+            <p class="empty-msg">
+              No services available yet.
             </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              Managed SOC
-            </h2>
-            <p>
-              Protect your business with our Managed SOC. 24/7 monitoring, threat
-            detection, and SIEM management.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <div class="service-card">
-            <h2>
-              VAPT Services
-            </h2>
-            <p>
-              Our Vulnerability Assessment and Penetration Testing (VAPT) uncovers
-            critical vulnerabilities with expert-led testing.
-            </p>
-            <a href="/contact" class="learn-more">Learn more →</a>
-          </div>
-
-          <!-- Tambah card lain kebawah -->
+          @endif
         </div>
       </section>
 
@@ -138,5 +51,5 @@
       </div>
     </main>
   @endslot
-    
+  
 @end
