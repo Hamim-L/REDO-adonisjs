@@ -691,7 +691,7 @@ nav a:hover {
   align-items: center;
   text-align: center;
   color: white;
-  background: linear-gradient(135deg, #084e69 0%, #0bc9cd 100%);
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
 }
 
 .wishlist-overlay {

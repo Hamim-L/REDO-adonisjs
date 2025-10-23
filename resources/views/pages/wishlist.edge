@@ -13,6 +13,9 @@
         </div>
       </section>
 
+      <div class="gradient-divider">
+      </div>
+
       <section class="wishlist-content">
         <div class="wishlist-container">
           <div id="wishlistItems" class="wishlist-grid">
@@ -30,6 +33,8 @@
         </div>
       </section>
     </main>
+    <div class="gradient-divider-footer">
+    </div>
 
     <script>
       function loadWishlist() {
@@ -43,15 +48,15 @@
           wishlistItems.style.display = "grid";
           emptyWishlist.style.display = "none";
           wishlistItems.innerHTML = wishlist.map(service => `
-                    <div class="wishlist-item" data-id="${service.id}">
-                      <h3>${service.title}</h3>
-                      <p>${service.desc}</p>
-                      <div class="wishlist-actions">
-                        <a href="/contact" class="contact-service-btn">Contact Us</a>
-                        <button onclick="removeFromWishlist('${service.id}')" class="remove-btn">Remove</button>
-                      </div>
-                    </div>
-                  `).join("");
+                                            <div class="wishlist-item" data-id="${service.id}">
+                                              <h3>${service.title}</h3>
+                                              <p>${service.desc}</p>
+                                              <div class="wishlist-actions">
+                                                <a href="/contact" class="contact-service-btn">Contact Us</a>
+                                                <button onclick="removeFromWishlist('${service.id}')" class="remove-btn">Remove</button>
+                                              </div>
+                                            </div>
+                                          `).join("");
         }
       }
 
