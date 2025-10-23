@@ -27,14 +27,14 @@
 
         <div class="services-inner">
           @each(service in services)
-            <div class="service-card" data-id="{{ service.id }}">
+            <div class="service-cards" data-id="{{ service.id }}">
               <h2>
                 {{ service.title }}
               </h2>
               <p>
                 {{ service.description }}
               </p>
-              <a href="/contact" class="learn-more">Learn more →</a>
+              <a href="/contact" class="learn-more">Learn more →</a>              <br />
               <button class="add-to-wishlist">Add to Wishlist</button>
             </div>
           @endeach

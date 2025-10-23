@@ -6,7 +6,7 @@ if (searchBar) {
 
 function filterServices() {
   const filter = searchBar.value.toLowerCase()
-  const cards = document.querySelectorAll('.service-card')
+  const cards = document.querySelectorAll('.service-cards')
 
   cards.forEach((card) => {
     const title = card.querySelector('h2').textContent.toLowerCase()
@@ -18,7 +18,7 @@ function filterServices() {
 // ❤️ Add to Wishlist
 document.querySelectorAll('.add-to-wishlist').forEach((btn) => {
   btn.addEventListener('click', () => {
-    const card = btn.closest('.service-card')
+    const card = btn.closest('.service-cards')
     const title = card.querySelector('h2').textContent.trim()
     const desc = card.querySelector('p').textContent.trim()
     const id = card.dataset.id

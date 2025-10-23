@@ -374,7 +374,7 @@ nav a:hover {
 }
 
 /* Service Card (transparan + blur) */
-.service-card {
+.service-cards {
   background: rgba(0, 0, 0, 0.4); /* transparan */
   backdrop-filter: blur(6px); /* efek kaca */
   border-radius: 15px;
@@ -385,23 +385,23 @@ nav a:hover {
     box-shadow 0.3s;
 }
 
-.service-card:hover {
+.service-cards:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-.service-card h2 {
+.service-cards h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.service-card p {
+.service-cards p {
   font-size: 1rem;
   margin-bottom: 15px;
   line-height: 1.5;
 }
 
-.service-card .learn-more {
+.service-cards .learn-more {
   display: inline-block;
   color: #ff8c42;
   font-weight: 600;
@@ -409,7 +409,7 @@ nav a:hover {
   transition: color 0.3s;
 }
 
-.service-card .learn-more:hover {
+.service-cards .learn-more:hover {
   color: #ffd27f;
 }
 
@@ -1003,4 +1003,30 @@ nav a:hover {
 
 .delete-btn:hover {
   background-color: #dc2626;
+}
+
+.add-to-wishlist {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.add-to-wishlist:hover {
+  background-color: #005fcc;
+}
+
+.add-to-wishlist:active {
+  transform: scale(0.97);
+}
+
+.add-to-wishlist:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.4);
 }
